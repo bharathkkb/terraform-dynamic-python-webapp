@@ -19,10 +19,16 @@ metadata:
   annotations:
     config.kubernetes.io/local-config: "true"
 spec:
+  orchestration:
+    post:
+      name: "post"
+      image: "gcr.io/cloud-foundation-cicd/cft/developer-tools-krm:1.14"
+      entrypoint: "bash"
+      args: ["./infra/post.sh"]
   info:
     title: terraform-dynamic-python-webapp
     source:
-      repo: https://github.com/GoogleCloudPlatform/terraform-dynamic-python-webapp
+      repo: https://github.com/bharathkkb/terraform-dynamic-python-webapp
       sourceType: git
       dir: /infra
     actuationTool:

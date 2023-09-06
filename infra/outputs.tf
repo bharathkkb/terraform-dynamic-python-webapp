@@ -73,3 +73,55 @@ output "client_job_name" {
   description = "Name of the Cloud Run Job, deploying the front end"
   value       = local.client_job_name
 }
+
+output "suffix" {
+  value = local.random_suffix_value
+}
+
+output "project_id" {
+ value = var.project_id
+}
+
+output "region" {
+  value = var.region
+}
+
+output "client_image" {
+  value = local.client_image
+}
+
+output "client_sa_email" {
+  value = google_service_account.client.email
+}
+
+output "setup_job_name" {
+  value = local.setup_job_name
+}
+
+output "server_image" {
+  value = local.server_image
+}
+
+output "automation_sa_email" {
+  value = google_service_account.automation.email
+}
+
+output "django_settings_secret_id" {
+  value = google_secret_manager_secret.django_settings.secret_id
+}
+
+output "django_admin_pass_id" {
+  value = google_secret_manager_secret.django_admin_password.secret_id
+}
+
+output "placeholder_image" {
+  value = local.placeholder_image
+}
+
+output "sql_connection_name" {
+  value = google_sql_database_instance.postgres.connection_name
+}
+
+output "server_url" {
+  value = google_cloud_run_v2_service.server.uri
+}
